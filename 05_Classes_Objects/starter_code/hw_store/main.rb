@@ -1,15 +1,15 @@
 =begin
 We will use classes to make a program about shoppers buying things at a grocery store.
 
-Read this file and use it to understand what classes to create and 
+Read this file and use it to understand what classes to create and
 what methods each class should have
 
-When you create a new class, each class should have a separate file named 
+When you create a new class, each class should have a separate file named
 after the class and located in the lib directory.
 
 This file has examples of methods and properties that each class should have.
 
-When a method is called, below you will see a commented out version of 
+When a method is called, below you will see a commented out version of
 what it should print out and return
 
 HINTS: If you are stuck, check out hints_lib folder which will have an outline of
@@ -19,11 +19,15 @@ how to structure your code and which methods you need to define.
 
 require 'pry'
 
+require 'pry'
+require './lib/customer'
+require './lib/grocerystore'
+
 ###
 #HINT: you need to use require_relative here
 ###
 #require_relative 'lib/grocerystore'
-#OR 
+#OR
 #require_relative 'hint_lib/grocerystore'
 
 #create a new grocery store named Safeway
@@ -38,7 +42,7 @@ safeway.stock_item('banana', 1, 5)
 safeway.stock_item('oatmeal', 2, 10)
 safeway.stock_item('chocolate', 1.50 , 2)
 
-safeway.view_item('banana')
+#safeway.view_item('banana')
 # => "Safeway has 5 bananas for 1 dollar each."
 
 #create a new customer named Jack who has $10
@@ -49,12 +53,12 @@ jack.shopping_cart
 # => {}
 
 #jack wants to buy one banana from safeway:
-#remember to update how many bananas the store has left!! 
+#remember to update how many bananas the store has left!!
 #also remember to check if jack already had any bananas in his cart
 jack.add_to_cart(safeway, 'banana', 1)
 # => "Jack added 1 banana to his cart. Here is his shopping cart:"
 #   { "banana" => {price: 1, quantity: 1} }
-
+binding.pry
 jack.add_to_cart(safeway, 'chocolate', 2)
 
 jack.checkout(safeway)
@@ -72,9 +76,9 @@ jack.checkout(safeway)
 # => "Insufficient Funds. Your shopping cart has been cleared."
 
 =begin
-#BONUS 
+#BONUS
 
-Implement better edge-case handling. Right now jack could buy 10 bananas 
+Implement better edge-case handling. Right now jack could buy 10 bananas
 even if the store has 2. Then the store has -8 bananas! Let's fix that:
 
 #jack tries to buy 10 chocolate bars, but the store only has 2
@@ -90,5 +94,3 @@ jack.add_to_cart(safeway, 'chocolate', 10)
 Write a method for a customer to remove an item from their shopping cart
 
 =end
-
-

@@ -1,4 +1,3 @@
-
 class Polygon
 	attr_accessor :len_sides
 
@@ -29,13 +28,15 @@ class Rectangle < Polygon
 		@length = length
 		@width = width
 		super([length, width, length, width])
+		#super calls the parent class methods like calling Polygon.new
 	end
 
 	def area ()
 		return @length * @width
 	end
 
-	def to_s ()
+	def to_s () #using super here calls the parent class to_s method
+		#super() returns "This is a #{self.class} with #{num_sides()} sides."
 		super() + " It's length and width are #{@length}, #{@width}."
 	end
 end
@@ -46,3 +47,7 @@ class Square < Rectangle
 		super(side, side)
 	end
 end
+
+#Overriding idea that the subclass can over ride parent method
+#Child inherits the Parent's method
+#super calls the Parent methods

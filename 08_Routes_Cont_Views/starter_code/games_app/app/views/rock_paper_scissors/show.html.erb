@@ -1,0 +1,20 @@
+<h1>You selected:</h1>
+<%= @p %>
+<% if @result == "win"%>
+	<h2> YOU WIN!!</h2>
+    <h2> Your guess: <%= @guess %> </h2>
+		<h2> The throw was <%= @throw %> </h2>
+		<%= image_tag("games/cat-wins.gif") %>
+	</h2>
+<% elsif @result == "tie" %>
+<h2> Eh...you tied. Try again?</h2>
+	  <h2> Your guess: <%= @guess %> </h2>
+		<h2> The throw was <%= @throw %> </h2>
+		<!-- this is from giphy -->
+<iframe src="//giphy.com/embed/QMMt03hAmVbNu" width="480" height="310" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/cats-QMMt03hAmVbNu">via GIPHY</a></p>
+<% else %>
+	<h2> You lost </h2>
+	<h2> Your guess: <%= @guess %> </h2>
+	<h2> The throw was <%= @throw %> </h2>
+	<%= image_tag("games/loser.gif") %>
+<% end %>

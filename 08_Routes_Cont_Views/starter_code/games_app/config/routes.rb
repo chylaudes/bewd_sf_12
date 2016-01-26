@@ -1,4 +1,6 @@
 GamesApp::Application.routes.draw do
+  get "rock_paper_scissors/new"
+  get "rock_paper_scissors/show"
   get "secret_number/new"
   get "secret_number/show"
 
@@ -45,7 +47,7 @@ GamesApp::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'

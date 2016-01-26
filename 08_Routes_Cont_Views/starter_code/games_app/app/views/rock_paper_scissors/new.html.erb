@@ -1,0 +1,5 @@
+<h1>Welcome to Rock Paper Scissors</h1>
+<h2> Choose a Rock, Paper, or Scissors </h2>
+<% @rsp_array.each do |x| %>
+	<%= link_to(x, rock_paper_scissors_show_path(x) ) %>
+<% end %>
